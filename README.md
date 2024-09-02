@@ -22,6 +22,9 @@ This project showcases various CPU scheduling algorithms implemented in C++. The
 ### Feedback (FB)
 - Feedback scheduling utilizes a multi-level priority system, dynamically adjusting process priorities based on their execution history. Higher-priority processes are executed first, and once they complete, they are moved to a lower-priority queue.
 
+### Feedback with Variable Time Quantum (FBV)
+- FBV extends the Feedback algorithm by incorporating variable time quanta for each priority level, making it more adaptable to processes with different requirements.
+
 ### Aging
 - The Aging algorithm prevents process starvation by gradually increasing the priority of processes that have waited for an extended period, ensuring even low-priority processes receive CPU time.
 
