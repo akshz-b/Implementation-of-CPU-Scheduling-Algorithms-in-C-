@@ -1,51 +1,52 @@
 # CPU Scheduling Algorithms
-This project presents a collection of CPU scheduling algorithms implemented in C++. The available algorithms include First Come First Serve (FCFS), Round Robin (RR), Shortest Process Next (SPN), Shortest Remaining Time (SRT), Highest Response Ratio Next (HRRN), Feedback (FB), and Aging.
 
+This project showcases various CPU scheduling algorithms implemented in C++. The algorithms available include First Come First Serve (FCFS), Round Robin (RR), Shortest Process Next (SPN), Shortest Remaining Time (SRT), Highest Response Ratio Next (HRRN), Feedback (FB), and Aging.
+
+## Algorithms
 
 ### First Come First Serve (FCFS)
-- The First Come First Serve (FCFS) algorithm processes requests in the order they arrive, with no consideration for the length of the process or its priority. As a non-preemptive method, FCFS can sometimes lead to inefficiencies, especially if long processes block shorter ones.
+- FCFS processes tasks in the order they arrive without considering their length or priority. This non-preemptive approach can sometimes lead to inefficiencies if long processes block shorter ones.
 
 ### Round Robin with Adjustable Time Quantum (RR)
-- The Round Robin (RR) scheduling technique assigns CPU time slices (or quanta) to each process in a cyclical order. This implementation allows for variable time quanta, optimizing CPU time by adjusting it according to process needs.
+- Round Robin (RR) assigns CPU time slices to processes in a cyclic order. This implementation features variable time quanta, allowing the time slice to be adjusted according to each process's needs, optimizing CPU time allocation.
 
 ### Shortest Process Next (SPN)
-- Shortest Process Next (SPN) prioritizes processes with the shortest burst times, executing them first. This non-preemptive algorithm aims to minimize average waiting time but can cause longer processes to wait.
+- SPN prioritizes processes with the shortest burst times, executing them first. As a non-preemptive algorithm, it focuses on minimizing average waiting time but can result in longer processes being delayed.
 
 ### Shortest Remaining Time (SRT)
-- Shortest Remaining Time (SRT) is a preemptive variant of SPN, where the currently running process can be interrupted if a new process with a shorter remaining time arrives. This algorithm dynamically adjusts priorities to optimize overall system performance.
+- SRT is a preemptive version of SPN, allowing the current process to be interrupted if a new process with a shorter remaining time arrives. This dynamic adjustment aims to improve overall system performance.
 
 ### Highest Response Ratio Next (HRRN)
-- The Highest Response Ratio Next (HRRN) algorithm selects the process with the highest response ratio, which is calculated based on waiting time and burst time. This non-preemptive method helps in balancing waiting time and service time, reducing process starvation.
+- HRRN selects the process with the highest response ratio, calculated based on waiting time and burst time. This non-preemptive method helps balance waiting time and service time, reducing the risk of process starvation.
 
 ### Feedback (FB)
-- Feedback scheduling is a multi-level priority system that dynamically adjusts the priority of processes based on their execution history. Higher-priority processes are executed first, and upon completion, they are moved to a lower-priority queue.
-
-### Feedback with Variable Time Quantum (FBV)
-- This variant of Feedback scheduling also considers variable time quanta for each priority level, making it more adaptable to processes with varying requirements.
+- Feedback scheduling utilizes a multi-level priority system, dynamically adjusting process priorities based on their execution history. Higher-priority processes are executed first, and once they complete, they are moved to a lower-priority queue.
 
 ### Aging
-- The Aging algorithm is designed to prevent process starvation by gradually increasing the priority of processes that have been waiting for an extended period. This ensures that even low-priority processes eventually receive CPU time.
+- The Aging algorithm prevents process starvation by gradually increasing the priority of processes that have waited for an extended period, ensuring even low-priority processes receive CPU time.
 
 ## Setup Instructions
 
 1. **Compile the Code:**
-   Run the following command to compile the project:
+   To compile the project, use the following commands:
    ```bash
-   make
+   g++ -c main.cpp
+   g++ -o schedular main.o
    ```
 
 2. **Execute the Program:**
-   After compilation, run the executable to start the simulation.
+   After compiling, run the executable named `schedular` to start the simulation.
 
-## Input Details
-- **First Line:** Indicates whether to show "trace" or "stats" in output.
-- **Second Line:** Specifies the scheduling algorithms to be used, along with any required parameters (e.g., time quantum for Round Robin).
-- **Third Line:** The maximum simulation time.
-- **Fourth Line:** The number of processes to be simulated.
-- **Subsequent Lines:** Detailed descriptions of each process, including process name, arrival time, and either service time or priority, depending on the algorithm.
+## Input Format
 
-> **Note:** For Aging, the input format includes the process name, arrival time, and priority, instead of service time.
-Example input.
+- **First Line:** Specify "trace" or "stats" to determine the output format.
+- **Second Line:** List the CPU scheduling algorithms to be used, along with any parameters like time quantum for Round Robin.
+- **Third Line:** Specify the maximum time for the simulation.
+- **Fourth Line:** Indicate the number of processes to be simulated.
+- **Subsequent Lines:** Provide a description of each process, including its name, arrival time, and either service time or priority (depending on the algorithm).
+
+### Example Input
+```
 stats
 1
 20
@@ -55,5 +56,5 @@ B,2,6
 C,4,4
 D,6,5
 E,8,2
-
+```
 
