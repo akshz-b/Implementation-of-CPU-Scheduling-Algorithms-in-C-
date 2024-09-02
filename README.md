@@ -47,7 +47,7 @@ This project showcases various CPU scheduling algorithms implemented in C++. The
 
 ### Example Input
 ```
-stats
+trace
 1
 21
 5
