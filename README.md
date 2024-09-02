@@ -49,12 +49,12 @@ This project showcases various CPU scheduling algorithms implemented in C++. The
 ```
 stats
 1
-20
+21
 5
-A,0,3
-B,2,6
-C,4,4
-D,6,5
-E,8,2
+A,0,5
+B,2,4
+C,1,1
+D,6,4
+E,8,7
 ```
 
